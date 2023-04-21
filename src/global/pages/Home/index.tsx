@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import api from "../../../service/api";
-import { Text } from "react-native";
+import { FlatList, Text } from "react-native";
+import Card from "../../../components/Card";
+import { FadeAnimation } from "../../../components/FadeAnimation";
 
-type PokemonType = {
-  type: string;
+export type PokemonType = {
+  type: {
+    name: string;
+  };
 };
 
-type Pokemon = {
+export type Pokemon = {
   name: string;
   url: string;
   id: number;
@@ -56,9 +60,15 @@ export const Home = () => {
 
   return (
     <S.Container>
-      {pokemons.map((item) => (
-        <Text>{item.name}</Text>
-      ))}
+      <FlatList
+        data={pokemons}
+        keyExtractor={(pokemon) => pokemon.id.toString()}
+        renderItem={({ item: pokemon }) => (
+          <FadeAnimation>
+            <Card data={pokemon} />
+          </FadeAnimation>
+        )}
+      />
     </S.Container>
   );
 };

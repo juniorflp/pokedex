@@ -8,6 +8,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       {/* <Welcome /> */}
+
       <Home />
     </ThemeProvider>
   );
