@@ -4,6 +4,7 @@ import * as S from "./styles";
 import dotsImg from "../../assets/img/dots.png";
 import pokeballImg from "../../assets/img/pokeballCard.png";
 import { Pokemon } from "../../global/pages/Home";
+import { FadeAnimation } from "../FadeAnimation";
 
 type CardProps = {
   data: Pokemon;
@@ -26,11 +27,13 @@ const Card = ({ data, ...rest }: CardProps) => {
       </S.LeftSide>
       <S.RightSide>
         <S.PokeballDetail source={pokeballImg} />
-        <S.PokemonImage
-          source={{
-            uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
-          }}
-        />
+        <FadeAnimation>
+          <S.PokemonImage
+            source={{
+              uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
+            }}
+          />
+        </FadeAnimation>
       </S.RightSide>
     </S.PokemonsCard>
   );

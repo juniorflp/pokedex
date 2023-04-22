@@ -1,4 +1,7 @@
 import styled, { css } from "styled-components/native";
+import { Dimensions } from "react-native";
+
+const windowWidth = Dimensions.get("window").width;
 
 export const Container = styled.View`
   ${({ theme }) => css`
@@ -32,6 +35,7 @@ export const WrapperImage = styled.View`
 export const Footer = styled.View`
   ${({ theme }) => css`
     justify-content: center;
+    position: relative;
     align-items: center;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -53,5 +57,15 @@ export const SubTitle = styled.Text`
     font-size: 16px;
     margin-top: 20px;
     color: ${theme.colors.textWhite};
+  `}
+`;
+
+export const BgImage = styled.ImageBackground`
+  ${({ theme }) => css`
+    width: ${windowWidth}px;
+    position: absolute;
+    top: 0px;
+    height: 220px;
+    margin-left: -20px;
   `}
 `;

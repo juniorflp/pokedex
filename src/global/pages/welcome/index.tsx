@@ -4,8 +4,14 @@ import { Text } from "react-native";
 import pokemonAnimation from "./pokemon.json";
 import AnimatedLottieView from "lottie-react-native";
 import { Button } from "../../../components/Button";
+import { useNavigation } from "@react-navigation/native";
+import pokeBallHeader from "../../../assets/img/pokeball.png";
 
-export const Welcome = () => {
+export const Welcome = ({ navigation }) => {
+  const handleNavigation = () => {
+    navigation.navigate("Home");
+  };
+
   return (
     <S.Container>
       <S.Content>
@@ -23,7 +29,8 @@ export const Welcome = () => {
         <S.SubTitle>Encontre todos Pokemons em um só lugar</S.SubTitle>
       </S.Content>
       <S.Footer>
-        <Button title="Iniciar" />
+        <S.BgImage source={pokeBallHeader} />
+        <Button title="Iniciar" onPress={handleNavigation} />
       </S.Footer>
     </S.Container>
   );
