@@ -47,6 +47,7 @@ export const Footer = styled.View`
 
 export const Title = styled.Text`
   ${({ theme }) => css`
+    margin-top: 30px;
     font-size: 40px;
     color: ${theme.colors.textWhite};
   `}
@@ -54,7 +55,7 @@ export const Title = styled.Text`
 
 export const SubTitle = styled.Text`
   ${({ theme }) => css`
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 20px;
     color: ${theme.colors.textWhite};
   `}

@@ -3,8 +3,8 @@ import { Text, TouchableOpacityProps } from "react-native";
 import * as S from "./styles";
 import dotsImg from "../../assets/img/dots.png";
 import pokeballImg from "../../assets/img/pokeballCard.png";
-import { Pokemon } from "../../global/pages/Home";
 import { FadeAnimation } from "../FadeAnimation";
+import { Pokemon } from "../../@types/pokemon-list.interface";
 
 type CardProps = {
   data: Pokemon;

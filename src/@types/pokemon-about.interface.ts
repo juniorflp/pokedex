@@ -6,6 +6,7 @@ export interface PokemonAbout {
   types: Types[];
   weight: number;
   color: string;
+  height: number;
 }
 
 export type Ability = {

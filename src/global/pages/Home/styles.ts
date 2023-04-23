@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components/native";
-import { Dimensions } from "react-native";
+import { Dimensions, SafeAreaView } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -39,6 +39,22 @@ export const WrapInput = styled.View`
   padding: 10px 30px;
   flex-direction: row;
   box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
+`;
+
+export const ButtonToTop = styled.TouchableOpacity`
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+`;
+export const PokemonLogo = styled.Image`
+  margin-top: 70px;
+  width: 200px;
+  height: 73px;
+`;
+
+export const Safe = styled(SafeAreaView)`
+  flex: 1;
+  margin-top: -10px;
 `;

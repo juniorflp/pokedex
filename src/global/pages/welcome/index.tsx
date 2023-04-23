@@ -30,7 +30,7 @@ export const Welcome = ({ navigation }) => {
       </S.Content>
       <S.Footer>
         <S.BgImage source={pokeBallHeader} />
-        <Button title="Iniciar" onPress={handleNavigation} />
+        <Button title="Iniciar Pokédex" onPress={handleNavigation} />
       </S.Footer>
     </S.Container>
   );
